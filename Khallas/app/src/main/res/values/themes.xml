@@ -1,0 +1,15 @@
+<resources>
+    <style name="Theme.Khallas" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_700</item>
+        <item name="colorPrimaryDark">@color/purple_900</item>
+        <item name="colorAccent">@color/teal_200</item>
+    </style>
+
+    <style name="Theme.Khallas.FullScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="colorPrimary">@color/purple_700</item>
+        <item name="colorPrimaryDark">@color/purple_900</item>
+        <item name="colorAccent">@color/teal_200</item>
+    </style>
+</resources>

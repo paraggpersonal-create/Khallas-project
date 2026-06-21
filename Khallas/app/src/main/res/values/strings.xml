@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Khallas!</string>
+    <string name="tab_gallery">Open Gallery</string>
+    <string name="tab_browse">Browse folders</string>
+    <string name="grant_access">Grant Storage Access</string>
+    <string name="permission_rationale">Khallas! needs full storage access to browse and delete your media and files. Tap below, then enable "Allow access to manage all files" on the next screen.</string>
+</resources>

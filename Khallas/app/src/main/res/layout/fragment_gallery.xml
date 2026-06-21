@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/pathText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        android:padding="10dp"
+        android:textSize="13sp"
+        android:singleLine="true"
+        android:ellipsize="start"
+        tools:text="/storage/emulated/0/DCIM" />
+
+    <Button
+        android:id="@+id/upButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⬆ Up one level"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/viewMediaButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Media in this folder"
+        android:visibility="gone" />
+
+</LinearLayout>
