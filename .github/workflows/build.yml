@@ -8,6 +8,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: Khallas
+
     steps:
       - uses: actions/checkout@v4
 
@@ -16,16 +21,15 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Point Gradle at the pre-installed Android SDK
+        run: echo "sdk.dir=$ANDROID_HOME" > local.properties
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '8.7'
-
-      - name: Generate Gradle wrapper
-        run: gradle wrapper --gradle-version 8.7 --distribution-type bin
+      - name: Download Gradle and generate wrapper
+        run: |
+          wget -q https://services.gradle.org/distributions/gradle-8.7-bin.zip -O /tmp/gradle.zip
+          unzip -q /tmp/gradle.zip -d /tmp/
+          /tmp/gradle-8.7/bin/gradle wrapper --gradle-version 8.7 --distribution-type bin
+          chmod +x gradlew
 
       - name: Build debug APK
         run: ./gradlew assembleDebug --stacktrace
@@ -33,4 +37,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: khallas-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+          path: Khallas/app/build/outputs/apk/debug/*.apk
